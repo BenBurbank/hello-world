@@ -1,0 +1,190 @@
+public class ArrayUtils {
+
+   public static void main(String[]args) {
+   
+   double[] nums = {1.1, 2.2, 3.3, 4.4};
+   displayArray(nums);
+   nums = push(nums, 5.5);
+   displayArray(nums);
+   nums = pop(nums);
+   displayArray(nums);
+   nums = remove(nums, 1);
+   displayArray(nums);
+   nums = insert(nums, 9.9, 1);
+   displayArray(nums);
+//   nums = linearSearch(nums,9.9);
+//   displayArray(nums);
+
+   
+   int[] intNums = {1, 2, 3};
+   displayArray(intNums);
+   intNums = push(intNums, 4);
+   displayArray(intNums);
+   intNums = pop(intNums);
+   displayArray(intNums);
+   intNums = remove(intNums, 1);
+   displayArray(intNums);
+   intNums = insert(intNums, 9, 1);
+   displayArray(intNums);  
+//   intNums = linearSearch(intNums,9);
+//   displayArray(intNums);
+ 
+   }
+
+   public static double[] insert(double[] arr, double item, int loc) {
+   double[] na = new double[arr.length+1];
+      for (int ix = 0; ix < loc; ix++) {
+         na[ix] = arr[ix];
+      }
+      na[loc] = item;
+      for (int ix = loc +1; ix < na.length; ix++) {
+         na[ix] = arr[ix-1];
+      }
+   return na;
+   }
+
+   public static int[] insert(int[] arr, int item, int loc) {
+   int[] na = new int[arr.length+1];
+      for (int ix = 0; ix < loc; ix++) {
+         na[ix] = arr[ix];
+      }
+      na[loc] = item;
+      for (int ix = loc +1; ix < na.length; ix++) {
+         na[ix] = arr[ix-1];
+      }
+   return na;
+   }
+   
+/* //Tries to return pos but cannot return converted to double[]
+   public static double[] linearSearch(double[] arr, double num) {
+   int pos;
+      for (int ix = 0; ix < arr.length; ix++) {
+         if (arr[ix] == num) {
+            pos = ix;
+         }
+      }
+      if (pos < -1) {
+      pos = -1;
+      }
+   return pos;
+   } 
+*/  
+/*
+ //Tries to return pos but cannot return converted to int[]
+   public static int[] linearSearch(int[] arr, int num) {
+   int[] pos = new int[0];
+      for (int ix = 0; ix < arr.length; ix++) {
+         if (arr[ix] == num) {
+            pos[0] = ix;
+         }
+      }
+      if (pos[0] < -1) {
+      pos[0] = -1;
+      }
+   return pos;
+   }
+*/
+
+   public static double[] pop(double[] arr) {
+      double[] na = new double[arr.length-1];
+         for (int ix = 0; ix < arr.length-1; ix++) {
+            na[ix] = arr[ix];
+         }
+      return na;
+   }
+
+   public static int[] pop(int[] arr) {
+   int[] na = new int[arr.length - 1];
+      for (int ix = 0; ix < arr.length-1; ix++) {
+         na[ix] = arr[ix];
+      }
+   return na;
+   }
+   
+   public static double[] push(double[] arr, double item) {
+   double[] na = new double[arr.length +1];
+      for (int ix = 0; ix < arr.length; ix++) {
+         na[ix] = arr[ix];
+      }
+   na[na.length-1] = item;
+   return na;
+   }
+   
+   public static int[] push(int[] arr, int item) {
+   int[] na = new int[arr.length +1];
+      for (int ix = 0; ix < arr.length; ix++) {
+         na[ix] = arr[ix];
+      }
+   na[na.length -1] = item;
+   return na;
+   }
+   
+   public static double[] remove(double[] arr, int loc) {
+   double[] na = new double[arr.length-1];
+      for (int ix = 0; ix < loc; ix++) {
+         na[ix] = arr[ix];
+      }
+      for (int ix = loc; ix < na.length; ix++) {
+         na[ix] = arr[ix+1];
+      }
+   return na;
+   }
+   
+   public static int[] remove(int[] arr, int loc) {
+   int[] na = new int[arr.length-1];
+      for (int ix = 0; ix < loc; ix++) {
+         na[ix] = arr[ix];
+      }
+      for (int ix = loc; ix < na.length; ix++) {
+         na[ix] = arr[ix+1];
+      }
+   return na;
+   }
+   /*
+   //Finish this after Monday
+   public static double[] removeByValue(double[] arr, double item) {
+   return double;
+   }
+   
+   //Finish this after Monday
+   public static int[] removeByValue(int[] arr, int item) {
+   return int;
+   }
+   
+   //Finish this
+   public static double[] selectionSort(double[] arr) {
+   double[] na = new double[arr.length];
+      for (int ix = 0; ix < na.length; ix++) {
+      int vari = arr[ix];
+      int index = ix;
+         if (vari < ix+1) {
+            int tiny = vari;
+         }
+      }
+   return na;
+   }
+   
+   //Finish this
+   public static int[] selectionSort(int[] arr) {
+   return int;
+   }
+   */
+   
+   //delete displayArray after assignment is complete
+   private static void displayArray(double[] n) {
+      for (double cell: n) {
+      System.out.print(cell + ", ");
+      }
+   System.out.println();
+   }  
+   //delete displayArray
+   //delete displayArray
+   private static void displayArray(int[] n) {
+      for (int cell: n) {
+      System.out.print(cell + ", ");
+      }
+   System.out.println();
+   }  
+   //delete displayArray
+
+}
